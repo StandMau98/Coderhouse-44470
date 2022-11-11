@@ -14,3 +14,17 @@ class Familia(models.Model):
     dni = models.IntegerField()
     nacimiento = models.DateField()
 
+
+class Estudiante(models.Model):
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100)
+    email = models.EmailField()
+class Profesor(models.Model):
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100)
+    email = models.EmailField()
+    profesion = models.CharField(max_length=100)
+class Entregable(models.Model):
+    nombre = models.CharField(max_length=100)
+    fecha_de_entrega = models.DateField()
+    entregado = models.BooleanField()
