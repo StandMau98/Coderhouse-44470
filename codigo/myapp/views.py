@@ -32,7 +32,7 @@ def buscar_torneo(request):
     return render(request, 'myapp/busqueda_torneo.html')
 
 def resultados_busqueda_torneo(request):
-    nombre_torneo = request.GET['nombre_curso']
+    nombre_torneo = request.GET['nombre_torneo']
     #iconteins es una forma de buscar sus cadenas de cada una de las registros
     torneo = Torneo.objects.filter(nombre__icontains=nombre_torneo)
     return render(request, 'myapp/resultados_busquedas_torneo.html', {'torneo': torneo})
