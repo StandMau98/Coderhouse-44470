@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block contenido %}
+
+<ul>
+    {% for torn in torneo %}
+    <li>{{torn.nombre}} -- {{torn.categoria}} </li>
+    {% endfor %}
+</ul>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html' %}
+
+{% block contenido %}
+
+<h1>TORNEO CREAR</h1>
+
+<form action="/coder/torneo/crear/" method="post">
+    {% csrf_token %}
+<p>
+    Torneo: <input type="text" name="torneo" id="">
+</p>
+<p>
+    Categoria: <input type="number" name="categoria" id="">
+</p>
+
+<input type="submit" value="Crear torneo">
+
+</form>
+
+{% endblock %}
