@@ -1,0 +1,19 @@
+{% extends 'myapp/base.html' %}
+
+{% block contenido %}
+
+{% for palas in object_list %}
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title"> {{palas.nombre}} </h5>
+      <h6 class="card-subtitle mb-2 text-muted">USD {{palas.precio}} </h6>
+      <p class="card-text"> Stock {{palas.stock}} </p>
+      <a href="{% url 'c-palas-detail' palas.id%} " class="card-link">detail</a>
+      <a href="{% url 'c-palas-update' palas.id %} " class="card-link">actualizar</a>
+      <a href="{% url 'c-palas-delete' palas.id %} " class="card-link">delete</a>
+    </div>
+  </div>
+
+{% endfor %}
+
+{% endblock %}
