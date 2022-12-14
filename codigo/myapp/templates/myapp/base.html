@@ -21,11 +21,11 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'c-inicio' %} ">Inicio</a>
-                <a class="navbar-brand" href="{% url 'c-palas' %}">Paletas</a>
-                <a class="navbar-brand" href="{% url 'c-torneo' %}">Torneos</a>
-                <a class="navbar-brand" href="{% url 'c-profesores' %}">Staff de Profesores</a>
-                <a class="navbar-brand" href="{% url 'c-contacto' %}">Contacto</a>
+                <a class="navbar-brand" href="{% url 'c-inicio' %} " style="color: red;">Inicio</a>
+                <a class="navbar-brand" href="{% url 'c-palas' %}"style="color: red;">Paletas</a>
+                <a class="navbar-brand" href="{% url 'c-torneo' %}"style="color: red;">Torneos</a>
+                <a class="navbar-brand" href="{% url 'c-profesores' %}"style="color: red;">Staff de Profesores</a>
+                <a class="navbar-brand" href="{% url 'c-contacto' %}"style="color: red;">Contacto</a>
 
                 {% if request.user.is_authenticated %}
 
@@ -49,7 +49,7 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Padel Tour Ball</h1>
+                            <h1 class="mb-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">Padel Tour Ball</h1>
                            
                         </div>
                     </div>

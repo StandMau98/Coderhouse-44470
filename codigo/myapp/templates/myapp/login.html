@@ -6,10 +6,10 @@
 <p style="color: red">inicio de sersion invalida :{{errors}} </p>
 {% endif %}
 
-<form method="post">
+<form method="post" style="font-family: Georgia, 'Times New Roman', Times, serif;">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Iniciar sesion">
+    <input type="submit" value="Iniciar sesion" style=>
 </form>
 
 <p>¿No tenes una cuenta? <a href="{% url 'auth-register' %}"> Crear cuenta</a></p>
