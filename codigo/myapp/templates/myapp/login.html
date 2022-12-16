@@ -5,13 +5,14 @@
 {% if errors %}
 <p style="color: red">inicio de sersion invalida :{{errors}} </p>
 {% endif %}
-
-<form method="post" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+<div style="background-image:url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2022/01/persona-jugando-padel-2590051.jpg?tf=3840x');background-repeat: no-repeat;background-size: 100%;"><h1 style="margin-left: 1%; background-color: blue;margin-right: 80%; border-radius: 10%; ">Inicio de sesión</h1>
+<form method="post" style="font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 2%; margin-left: 1%;">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Iniciar sesion" style=>
+    <input type="submit" value="Iniciar sesion" style="margin-left: 3%;">
 </form>
 
-<p>¿No tenes una cuenta? <a href="{% url 'auth-register' %}"> Crear cuenta</a></p>
+<p style="margin-left: 1%;">¿No tenes una cuenta? <a href="{% url 'auth-register' %}"> Crear cuenta</a></p>
 
+</div>
 {% endblock %}
