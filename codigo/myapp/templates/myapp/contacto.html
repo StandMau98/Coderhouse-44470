@@ -32,25 +32,25 @@
   
               <!-- Name Input -->
               <div class="form-floating mb-3">
-                <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required"  /> <!-- aca se pone color a la celda-->
+                <input class="form-control" name="nombre" id="name" type="text" placeholder="Name" data-sb-validations="required"  /> <!-- aca se pone color a la celda-->
                 <label for="name">Nombre</label>
                 <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
               </div>
               <div class="form-floating mb-3">
-                <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                <input class="form-control" name="apellido" id="name" type="text" placeholder="Name" data-sb-validations="required" />
                 <label for="name">Apellido</label>
                 <div class="invalid-feedback" data-sb-feedback="name:required">apellido is required.</div>
               </div>
   
               <!-- Email Input -->
               <div class="form-floating mb-3">
-                <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                <input class="form-control" name="email" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
                 <label for="emailAddress">Email</label>
                 <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
                 <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
               </div>
               <div class="form-floating mb-3">
-                <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                <input class="form-control" name="telefono" id="name" type="phone" placeholder="Name" data-sb-validations="required" />
                 <label for="name">Telefono</label>
                 <div class="invalid-feedback" data-sb-feedback="name:required">phone is required.</div>
               </div>
@@ -58,7 +58,7 @@
   
               <!-- Message Input -->
               <div class="form-floating mb-3">
-                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                <textarea class="form-control" name="text" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
                 <label for="message">Escribinos en que podemos ayudarte</label>
                 <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
               </div>
@@ -66,10 +66,8 @@
               <!-- Submit success message -->
               <div class="d-none" id="submitSuccessMessage">
                 <div class="text-center mb-3">
-                  <div class="fw-bolder">Form submission successful!</div>
-                  <p>To activate this form, sign up at</p>
-                  <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                </div>
+                  <div class="fw-bolder">Tu mensaje se envio correctamente</div>
+                  </div>
               </div>
   
               <!-- Submit error message -->
@@ -79,7 +77,7 @@
   
               <!-- Submit button -->
               <div class="d-grid">
-                <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button>
+                <a class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</a>
               </div>
             </form>
             <!-- End of contact form -->

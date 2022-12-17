@@ -9,6 +9,7 @@
 <form method="post">
     {% csrf_token %}
     {{form.as_p}}
+    <a class="small text-dark mb-4 mb-lg-0 fw-bolder" href="{% url 'auth-avatar' %} ">Agregar avatar</a>
     <input type="submit" value="Guardar cambios">
 </form>
 

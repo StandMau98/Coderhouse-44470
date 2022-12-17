@@ -1,22 +1,30 @@
 {% extends 'myapp/base.html' %}
 
 {% block contenido %}
-
+<div class="d-flex justify-content-center bd-highlight mb-2">
 {% for palas in object_list %}
-<div class="card">
+
+<div class="p-1 bd-highlight">
+  <div class="card" enctype="multipart/form-data">
     <div class="card-body">
       <h5 class="card-title"> {{palas.nombre}} </h5>
       <h6 class="card-subtitle mb-2 text-muted">USD {{palas.precio}} </h6>
-      <p class="card-text"> Stock {{palas.stock}} </p>
-      <img src="https://www.tradeinn.com/f/13835/138353117/adidas-padel-pala-padel-metalbone-3.1.jpg" alt="Bullpadel Hack 3.1" style="height: 200px;">
+      <p class="card-text"> Stock {{palas.stock}} {{palas.foto}} </p>
+     
+      <img src="{{palas.foto.url}} " width="200px" alt="">
+      
       <div>
-      <a href="{% url 'c-palas-detail' palas.id%} " class="card-link">detail</a>
+      <a href="{% url 'c-palas-detail' palas.id%} " class="card-link">detalle</a>
       <a href="{% url 'c-palas-update' palas.id %} " class="card-link">actualizar</a>
-      <a href="{% url 'c-palas-delete' palas.id %} " class="card-link">delete</a>
+      <a href="{% url 'c-palas-delete' palas.id %} " class="card-link">borrar</a>
       </div>
     </div>
   </div>
+</div>
 
 {% endfor %}
+</div>
+
+<a href="{% url 'c-palas-create'%} ">Agregar Paletas</a>
 
 {% endblock %}

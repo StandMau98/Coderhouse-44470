@@ -14,6 +14,8 @@ class Palas(models.Model):
     nombre = models.CharField(max_length=100)
     precio = models.IntegerField()
     stock = models.IntegerField()
+    foto = models.ImageField(upload_to='palas', null=True, blank=True)
+
 
     def __str__(self):
       return f"{self.nombre} --> ARS {self.precio} --> Stock: {self.stock} "
@@ -33,9 +35,10 @@ class Contacto(models.Model):
     apellido = models.CharField(max_length=100)
     email = models.EmailField()
     telefono = models.IntegerField()
+    text = models.CharField(max_length=200, null=True)
 
     def __str__(self):
-      return f"{self.nombre}  {self.apellido} --> Email {self.email} --> Telefono {self.telefono} "
+      return f"{self.nombre}  {self.apellido} --> Email {self.email} --> Telefono {self.telefono}--> mensaje {self.text}"
 
 
 class Avatar(models.Model):

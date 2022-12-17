@@ -1,6 +1,15 @@
 {% extends 'myapp/base.html' %}
 
 {% block contenido %}
+<div class="card row">
+    <div class="card-body">
+      <h5 class="card-title"> {{palas.nombre}} </h5>
+      <h6 class="card-subtitle mb-2 text-muted">USD {{palas.precio}} </h6>
+      <p class="card-text"> Stock {{palas.stock}} </p>
+      <img src="{{palas.foto.url}} "  style="height: 200px;">
+     </div>
+     <a class="navbar-brand" href="{% url 'c-palas' %}"style="color: black; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Volver</a>
+  </div>
 
-<p>Palas {{palas}}</p>
+
 {% endblock %}

@@ -6,6 +6,14 @@ class ProfesorFormulario(forms.Form):
     nombre = forms.CharField()
     apellido = forms.CharField()
     email = forms.EmailField()
+
+
+class Contacto(forms.Form):
+    nombre= forms.CharField()
+    apellido = forms.CharField()
+    email= forms.EmailField()
+    telefono = forms.IntegerField()
+    text = forms.CharField()
     
 
 
@@ -17,7 +25,7 @@ class TorneoForm(forms.Form):
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(label = 'Corroe electronico')
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Confirme su Password', widget=forms.PasswordInput)
     first_name = forms.CharField(label='Nombre')
     last_name = forms.CharField(label='Apellido')
     class Meta:

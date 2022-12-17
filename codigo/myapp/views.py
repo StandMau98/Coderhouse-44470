@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.template import  Template, Context
 
 from myapp.models import Torneo, Profesor, Palas, Avatar
-from myapp.form import ProfesorFormulario, TorneoForm, RegisterForm, UserEditForm, AvatarForm
+from myapp.form import ProfesorFormulario, TorneoForm, RegisterForm, UserEditForm, AvatarForm, Contacto
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
@@ -25,6 +25,7 @@ def inicio(request):
 
 @login_required    
 def torneo(request):
+    
 
     errores = ""
 
@@ -44,24 +45,15 @@ def torneo(request):
             #si el formulario no es valido guardamos los errores para mostrarlos
             errores = formulario.errors
 
-#Recuperar todos lso torneo de la BD
+#Recuperar todos los torneo de la BD
     torneo = Torneo.objects.all()
 #Cremaos le form vacio
     formulario = TorneoForm()
 #Creamos el contexto
     contexto = {"listado_torneo": torneo, "formulario": formulario, "errores": errores}
 #Retornamos la respuesta
-
     return render(request, 'myapp/torneo.html', contexto)
 
-#def creacion_torneo(request):
- #   if request.method == "POST":
-  #      nombre_torneo = request.POST['torneo']
-   #     numero_categoria = int(request.POST['categoria'])
-#
- #       torneo = Torneo(nombre=nombre_torneo, categoria=numero_categoria)
-  #      torneo.save()
-   # return render(request, 'myapp/torneo_formulario.html')
 
 def buscar_torneo(request):
     return render(request, 'myapp/busqueda_torneo.html')
@@ -99,6 +91,14 @@ def update_torneo(request, id):
     
 def palas(request):
     return render(request, 'myapp/palas.html')
+
+def listPalas(request):
+    if request.user.is_authenticated:
+        img= Palas.objects.filter(palas=request.palas.id).order_by('-id')[0]
+        foto_url= img.foto.url
+    else:
+        foto_url= ''
+    return render(request, 'myapp/palas.html',  {'foto_url': foto_url})
     
 def profesores(request):
     return render(request, 'myapp/profesores.html')
@@ -122,7 +122,12 @@ def creacion_profesores(request):
     return render(request, 'myapp/profesores_form.html', contexto)
     
 def contacto(request):
-    return render(request, 'myapp/contacto.html')
+     
+        return render(request, 'myapp/contacto.html')
+
+def verMensajes(request):
+    
+    return render(request, 'myapp/verMensajes.html')
 
 
 class PalasList(LoginRequiredMixin, ListView):
@@ -136,12 +141,12 @@ class Palasdetail(DetailView):
 class PalasCreate(CreateView):
     model = Palas
     success_url = '/coder/palas/'
-    fields = ['nombre', 'precio', 'stock']
+    fields = ['nombre', 'precio', 'stock', 'foto']
 
 class PalasUpdate(UpdateView):
     model = Palas
     success_url = '/coder/palas/'
-    fields = ['nombre', 'precio', 'stock']
+    fields = ['nombre', 'precio', 'stock', 'foto']
 
 class PalasDelete(DeleteView):
     model = Palas
