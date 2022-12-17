@@ -19,13 +19,13 @@
     </head>
     <body style="background-image: url(https://img.freepik.com/vector-gratis/muro-hormigon-gris_53876-89251.jpg?size=626&ext=jpg&uid=R88044315&ga=GA1.2.1307372190.1671155154&semt=sph);">
         <!-- Navigation-->
-        <nav class="navbar navbar-light bg-light static-top" style="background-image: url(https://img.freepik.com/vector-gratis/muro-hormigon-gris_53876-89251.jpg?size=626&ext=jpg&uid=R88044315&ga=GA1.2.1307372190.1671155154&semt=sph);" >
+        <nav class="navbar navbar-light bg-light static-top" style="background-image: url(https://img.freepik.com/vector-gratis/muro-hormigon-gris_53876-89251.jpg?size=626&ext=jpg&uid=R88044315&ga=GA1.2.1307372190.1671155154&semt=sphpy);" >
             <div class="container">
-                <a class="navbar-brand" href="{% url 'c-inicio' %} " style="color: red;">Inicio</a>
-                <a class="navbar-brand" href="{% url 'c-palas' %}"style="color: red;">Paletas</a>
-                <a class="navbar-brand" href="{% url 'c-torneo' %}"style="color: red;">Torneos</a>
-                <a class="navbar-brand" href="{% url 'c-profesores' %}"style="color: red;">Staff de Profesores</a>
-                <a class="navbar-brand" href="{% url 'c-contacto' %}"style="color: red;">Contacto</a>
+                <a class="navbar-brand" href="{% url 'c-inicio' %} " style="color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Inicio</a>
+                <a class="navbar-brand" href="{% url 'c-palas' %}"style="color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Paletas</a>
+                <a class="navbar-brand" href="{% url 'c-torneo' %}"style="color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Torneos</a>
+                <a class="navbar-brand" href="{% url 'c-profesores' %}"style="color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Staff de Profesores</a>
+                <a class="navbar-brand" href="{% url 'c-contacto' %}"style="color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Contacto</a>
 
                 {% if request.user.is_authenticated %}
 
